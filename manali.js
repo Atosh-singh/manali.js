@@ -25,20 +25,24 @@ function reachManali() {
 function gotomountain() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve("reached mountain");
+      reject("some accident happen");
     }, 3000);
   });
 }
 
 async function fun1() {
-  const msg = await buyCar();
-  console.log(msg);
-  const msg2 = await planatrip();
-  console.log(msg2);
-  const msg3 = await reachManali();
-  console.log(msg3);
-  const msg4 = await gotomountain();
-  console.log(msg4);
+  try {
+    const msg = await buyCar();
+    console.log(msg);
+    const msg2 = await planatrip();
+    console.log(msg2);
+    const msg3 = await reachManali();
+    console.log(msg3);
+    const msg4 = await gotomountain();
+    console.log(msg4);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 fun1();
